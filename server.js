@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
-const express = require('express');
-const app = express();
+require('dotenv').config();
+require('./lib/utils/connect')();
+const app = require('./lib/app');
 
-app.get('/', (req, res) => res.send('API running'));
 
-const PORT = process.env.PORT || 5000;
+
+
+const PORT = process.env.PORT || 7890;
 
 app.listen(PORT, () => console.log(`server started on port ${PORT}`));
